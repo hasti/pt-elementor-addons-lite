@@ -1,4 +1,5 @@
 <?php
+
 namespace PT_Elementor_Addons_Lite\Widgets;
 
 use Elementor\Widget_Base;
@@ -23,7 +24,7 @@ class Heading_Widget extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return [ 'general' ];
+		return [ 'basic' ];
 	}
 
 	protected function _register_controls() {
@@ -36,11 +37,11 @@ class Heading_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
-			'heading_text',
+			'title',
 			[
-				'label' => __( 'Heading Text', 'pt-elementor-addons-lite' ),
+				'label' => __( 'Title', 'pt-elementor-addons-lite' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Default Heading', 'pt-elementor-addons-lite' ),
+				'default' => __( 'Default title', 'pt-elementor-addons-lite' ),
 			]
 		);
 
@@ -49,14 +50,13 @@ class Heading_Widget extends Widget_Base {
 
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-		echo '<h2>' . $settings['heading_text'] . '</h2>';
+		echo '<h2>' . $settings['title'] . '</h2>';
 	}
 
 	protected function _content_template() {
 		?>
-		<# var heading_text = settings.heading_text; #>
-		<h2>{{{ heading_text }}}</h2>
+		<# var title = settings.title; #>
+		<h2>{{{ title }}}</h2>
 		<?php
 	}
 }
-?>

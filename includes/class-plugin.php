@@ -216,12 +216,11 @@ class Plugin {
 	 */
 	public function register_widgets( $widgets_manager ): void {
 
-		require_once( __DIR__ . '/includes/widgets/widget-1.php' );
-		require_once( __DIR__ . '/includes/widgets/widget-2.php' );
-        require_once( __DIR__ . '/includes/widgets/heading-widget.php' );
-	    $widgets_manager->register( new \PT_Elementor_Addons_Lite\Widgets\Heading_Widget() );
-		$widgets_manager->register( new Widget_1() );
-		$widgets_manager->register( new Widget_2() );
+		require_once( 'widgets/heading-widget.php' );
+		require_once( 'widgets/advance-accordion.php' );
+		$widgets_manager->register( new \PT_Elementor_Addons_Lite\Widgets\Heading_Widget() );
+		$widgets_manager->register( new \PT_Elementor_Addons_Lite\Widgets\Advance_Accordion() );
+
 
 	}
 
@@ -236,11 +235,12 @@ class Plugin {
 	 */
 	public function register_controls( $controls_manager ): void {
 
-		require_once( __DIR__ . '/includes/controls/control-1.php' );
+		/*require_once( __DIR__ . '/includes/controls/control-1.php' );
 		require_once( __DIR__ . '/includes/controls/control-2.php' );
 
 		$controls_manager->register( new Control_1() );
-		$controls_manager->register( new Control_2() );
+		$controls_manager->register( new Control_2() );*/
+		// Above are the examples of how to register controls
 
 	}
 
